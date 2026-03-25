@@ -42,4 +42,9 @@ public class EventLogService {
     public List<EventLog> getAllLogs() {
         return eventLogRepository.findAll();
     }
+
+
+    public List<EventLog> findByTypeInfo( ){
+        return eventLogRepository.findByTypeInfo("USER_UPDATE");
+    }
 }

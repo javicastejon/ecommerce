@@ -11,7 +11,7 @@ import com.ejemplonosql.ecommerce.dto.UserResponse;
 public class UserMapper {
     public UserResponse toDTO(User user){
         UserResponse ucresponse = new UserResponse();
-        ucresponse.setUserId(user.getId());
+        ucresponse.setId(user.getId());
         ucresponse.setName(user.getName());
         ucresponse.setEmail(user.getEmail());
         ucresponse.setOrders(user.getOrders());
@@ -20,7 +20,7 @@ public class UserMapper {
 
     public User toEntity(UserRequest dto) {
         User user = new User();
-        user.setId(dto.getUserId());
+        user.setId(dto.getId());
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
         user.setOrders(dto.getOrders());

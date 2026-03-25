@@ -9,7 +9,7 @@ import lombok.Setter;
 
 @Getter @Setter
 public class UserResponse {
-   private Long userId;
+   private Long id;
    private String name;
    private String email;
    private List<Order> orders;

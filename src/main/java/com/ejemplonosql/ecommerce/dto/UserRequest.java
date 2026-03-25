@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @Getter @Setter
 public class UserRequest {
-   private Long userId;
+   private Long id;
    private String name;
    private String email;
    private List<Order> orders;
