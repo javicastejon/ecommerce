@@ -18,7 +18,7 @@ public class EcommerceApplication {
 
     @Bean
     public MongoTemplate mongoTemplate() {
-        String uri = "mongodb://mongo:27017/shoplogs";
+        String uri = "mongodb://localhost:27017/shoplogs";
         return new MongoTemplate(MongoClients.create(uri), "shoplogs");
     }
 }

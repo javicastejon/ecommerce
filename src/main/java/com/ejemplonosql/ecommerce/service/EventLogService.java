@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ejemplonosql.ecommerce.domain.model.EventLog;
@@ -47,4 +49,36 @@ public class EventLogService {
     public List<EventLog> findByTypeInfo( ){
         return eventLogRepository.findByTypeInfo("USER_UPDATE");
     }
+
+    /**
+     * Recupera todos los registros con paginacion
+     * @param pageable
+     * @return
+     */
+    public Page<EventLog> findAllByPage(Pageable pageable){
+        return eventLogRepository.findAll(pageable);
+    }
+
+    /**
+     * Dado un mensaje devuelve los eventos ordenados por fecha. 
+     * Basado en una consulta derivada de MongoRepository
+     * @param message
+     * @return List<EventLog>
+     */
+    public List<EventLog> getByMessageSortByTimeStamp(String message){
+        return eventLogRepository.getByMessageSortByTimeStamp(message);
+    }
+
+    /**
+     * Dado un mensaje devuelve los eventos ordenados por fecha.
+     * Basado en una @Query
+     * @param message
+     * @return List<EventLog>
+     */
+    public List<EventLog> getByTimeStamp(LocalDateTime date_start){
+        LocalDateTime date_end = LocalDateTime.now();
+        return eventLogRepository.findByTimestampQuery(date_start, date_end);
+    }
+
+
 }
