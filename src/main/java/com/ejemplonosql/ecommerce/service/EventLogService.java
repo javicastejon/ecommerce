@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.ejemplonosql.ecommerce.domain.model.EventLog;
-import com.ejemplonosql.ecommerce.infrastructure.mongo.EventLogRepository;
+import com.ejemplonosql.ecommerce.domain.repository.EventLogRepository;
 
 @Service
 public class EventLogService {
@@ -20,7 +20,7 @@ public class EventLogService {
     /**
      * Guarda un evento de log en MongoDB
      */
-    public void log(String type, String message, Long userId) {
+    public void log(String type, String message, String userId) {
 
         EventLog event = new EventLog();
         event.setType(type);

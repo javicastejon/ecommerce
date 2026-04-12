@@ -13,61 +13,56 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ejemplonosql.ecommerce.domain.model.Product;
 import com.ejemplonosql.ecommerce.domain.model.User;
+import com.ejemplonosql.ecommerce.dto.ProductRequest;
+import com.ejemplonosql.ecommerce.dto.ProductResponse;
 import com.ejemplonosql.ecommerce.dto.UserRequest;
 import com.ejemplonosql.ecommerce.dto.UserResponse;
+import com.ejemplonosql.ecommerce.mapper.ProductMapper;
 import com.ejemplonosql.ecommerce.mapper.UserMapper;
 import com.ejemplonosql.ecommerce.service.EventLogService;
+import com.ejemplonosql.ecommerce.service.ProductService;
 import com.ejemplonosql.ecommerce.service.UserService;
 
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/api/v1/products")
 @CrossOrigin(origins = "*")
-public class UserController {
+public class ProductController {
 
     @Autowired
-    private UserService userService;
+    private ProductService productService;
 
     @Autowired
-    private EventLogService eventLogService;
-
-    @Autowired
-    private UserMapper mapper;
-
-
+    private ProductMapper mapper;
 
     @PostMapping
-    public UserResponse createUser(@RequestBody UserRequest userCreationRequest) {
-        User user = userService.createUser(mapper.toEntity(userCreationRequest));
-        eventLogService.log("USER_CREATION","Creado nuevo usuario",user.getId());
-        return mapper.toDTO(user);
+    public ProductResponse createProduct(@RequestBody ProductRequest productRequest) {
+        Product product = productService.createProduct(mapper.toEntity(productRequest));
+        return mapper.toDTO(product);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable String id) {
-        userService.removeUser(id);
-        eventLogService.log("USER_DELETED","Usuario borrado correctamente",id);
+    public void deleteProduct(@PathVariable String id) {
+        productService.removeProduct(id);
     }
 
     @GetMapping("/{id}")
-    public UserResponse getUser(@PathVariable String id) {
-        User user = userService.getUserById(id).orElse(null);
+    public ProductResponse getProduct(@PathVariable String id) {
+        Product user = productService.getProductById(id).orElse(null);
         return mapper.toDTO(user);
     }
 
     @PutMapping("/{id}")
-    public UserResponse updateUser(@RequestBody UserRequest userRequest){
-        User userEntity = mapper.toEntity(userRequest);
-        userService.update(userEntity);
-        eventLogService.log("USER_UPDATE","Usuario modificado",userEntity.getId());
-        return mapper.toDTO(userEntity);
+    public ProductResponse updateProduct(@RequestBody ProductRequest productRequest){
+        Product productEntity = mapper.toEntity(productRequest);
+        productService.update(productEntity);
+        return mapper.toDTO(productEntity);
     }
 
     @GetMapping("/getall")
-    public List<User> getAllUser() {
-        System.out.println(eventLogService.findByTypeInfo());
-        return userService.getAll();
+    public List<Product> getAllProducts() {
+        return productService.getAll();
         
     }
 }
-

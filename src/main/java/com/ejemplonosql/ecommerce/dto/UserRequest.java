@@ -3,15 +3,15 @@ package com.ejemplonosql.ecommerce.dto;
 import java.util.List;
 
 
-import com.ejemplonosql.ecommerce.domain.model.Order;
+
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
 public class UserRequest {
-   private Long id;
+   private String id;
    private String name;
    private String email;
-   private List<Order> orders;
+   private List<Long> orders;
 }

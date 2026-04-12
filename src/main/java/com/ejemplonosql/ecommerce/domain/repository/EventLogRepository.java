@@ -1,4 +1,4 @@
-package com.ejemplonosql.ecommerce.infrastructure.mongo;
+package com.ejemplonosql.ecommerce.domain.repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
