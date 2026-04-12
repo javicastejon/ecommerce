@@ -8,9 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ejemplonosql.ecommerce.domain.model.Product;
-import com.ejemplonosql.ecommerce.domain.model.User;
 import com.ejemplonosql.ecommerce.domain.repository.ProductRepository;
-import com.ejemplonosql.ecommerce.domain.repository.UserRepository;
 
 @Service
 public class ProductService {
