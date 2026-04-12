@@ -20,7 +20,7 @@ jobs:
           java-version: 17
 
       - name: Build app image
-        run: docker-compose build
+        run: docker compose build
 
       - name: Start services
         run: docker-compose up -d
@@ -33,7 +33,7 @@ jobs:
 
       - name: Show logs on failure
         if: failure()
-        run: docker-compose logs
+        run: docker compose logs
 
       - name: Shutdown
-        run: docker-compose down
+        run: docker compose down
