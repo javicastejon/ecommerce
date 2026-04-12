@@ -3,9 +3,7 @@ package com.ejemplonosql.ecommerce.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.ejemplonosql.ecommerce.domain.model.User;
@@ -26,12 +24,12 @@ public class UserService {
         return userdb;
     }
 
-    public void removeUser(Long id){
+    public void removeUser(String id){
         userRepository.deleteById(id);
         
     }
 
-    public Optional<User> getUserById(Long id){
+    public Optional<User> getUserById(String id){
         return userRepository.findById(id);
     }
 
@@ -48,7 +46,7 @@ public class UserService {
                 });
     }
 
-    public void deleteUser(Long id){
+    public void deleteUser(String id){
         userRepository.deleteById(id);
     }   
 

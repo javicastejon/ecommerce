@@ -7,8 +7,6 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 
 import com.mongodb.client.MongoClients;
 
-
-
 @SpringBootApplication
 public class EcommerceApplication {
 
@@ -18,7 +16,7 @@ public class EcommerceApplication {
 
     @Bean
     public MongoTemplate mongoTemplate() {
-        String uri = "mongodb://localhost:27017/shoplogs";
-        return new MongoTemplate(MongoClients.create(uri), "shoplogs");
+        String uri = "mongodb://localhost:27017/ecommerce";
+        return new MongoTemplate(MongoClients.create(uri), "ecommerce");
     }
 }
