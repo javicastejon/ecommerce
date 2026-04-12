@@ -24,7 +24,7 @@ public class EventLog {
 
     private LocalDateTime timestamp;
 
-    private Long userId;
+    private String userId;
 
     
 
@@ -33,7 +33,7 @@ public class EventLog {
 
 
 
-    public EventLog(String id, String type, String message, LocalDateTime timestamp, Long userId) {
+    public EventLog(String id, String type, String message, LocalDateTime timestamp, String userId) {
         this.id = id;
         this.type = type;
         this.message = message;

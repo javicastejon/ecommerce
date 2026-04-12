@@ -1,25 +1,11 @@
 package com.ejemplonosql.ecommerce.domain.model;
 
-
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
 @Getter @Setter
 public class OrderLine {
-   @Id @GeneratedValue
-   private Long id;
-   @ManyToOne
-   @JoinColumn(name="order_id")
-   private Order order;
-   @ManyToOne
-   @JoinColumn(name="product_id")
+   private String order;
    private Product product;
    private int quantity;
 }
