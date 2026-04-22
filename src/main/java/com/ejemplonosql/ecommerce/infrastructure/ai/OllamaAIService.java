@@ -1,7 +1,11 @@
 package com.ejemplonosql.ecommerce.infrastructure.ai;
 
+import java.util.List;
+
 import org.springframework.ai.ollama.OllamaChatModel;
 import org.springframework.stereotype.Service;
+
+import com.ejemplonosql.ecommerce.domain.model.Product;
 
 @Service
 public class OllamaAIService {
@@ -12,17 +16,16 @@ public class OllamaAIService {
         this.chatModel = chatModel;
     }
 
-    /* TODO:  Pedir una refactorización para darle utilidad*/
-    public String getRecommendations(String userHistory) {
+    public String getRecommendations(List<Product> productList) {
 
-        // String prompt = """
-        //     Eres un recomendador de productos de e-commerce.
-        //     Historial del usuario:
-        //     %s
-        //     Devuelve 3 productos recomendados.
-        //     Formato: lista simple.
-        //     """.formatted(userHistory);
+        String prompt = """
+            Eres un recomendador de productos de e-commerce.
+            Lista de productos:
+            %s
+            Devuelve 2 productos recomendados.
+            Formato: lista simple.
+            """.formatted(productList);
 
-        return chatModel.call(userHistory);
+        return chatModel.call(prompt);
     }
 }

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.ejemplonosql.ecommerce.domain.model.User;
 import com.ejemplonosql.ecommerce.domain.repository.UserRepository;
 
-import jakarta.transaction.Transactional;
 
 @Service
 public class UserService {
@@ -34,7 +33,6 @@ public class UserService {
     }
 
     // Importante: se tiene que usar un modelo distinto ya que el objeto enviado está detached
-    @Transactional
     public void update(User user) {
         userRepository
                 .findById(user.getId()) 
