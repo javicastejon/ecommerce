@@ -16,29 +16,19 @@ public class GetRecommendationsService {
     
     private final GeminiAIService geminiAIService;
 
-<<<<<<< HEAD
     @Autowired
     private ProductService productService;
-
-    public GetRecommendationsService(OllamaAIService aiService) {
-=======
     public GetRecommendationsService(OllamaAIService aiService, GeminiAIService geminiAIService) {
->>>>>>> feature-gemini-ai
         this.aiService = aiService;
         this.geminiAIService = geminiAIService;
     }
 
-<<<<<<< HEAD
-    public String execute(String userHistory) {
-        List<Product> productList = productService.getAll();
-        return aiService.getRecommendations(productList);
-=======
     public String queryOllama(String userHistory) {
-        return aiService.chat(userHistory);
+        List<Product> productList = productService.getAll();
+        return aiService.chat(productList);
     }
 
     public String queryGemini(String userHistory){
         return geminiAIService.chat(userHistory);
->>>>>>> feature-gemini-ai
     }
 }

@@ -2,10 +2,6 @@ package com.ejemplonosql.ecommerce.domain.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-<<<<<<< HEAD
-import lombok.Data;
-=======
->>>>>>> feature-gemini-ai
 import lombok.Getter;
 import lombok.Setter;
 
