@@ -12,8 +12,7 @@ public class OllamaAIService {
         this.chatModel = chatModel;
     }
 
-    /* TODO:  Pedir una refactorización para darle utilidad*/
-    public String getRecommendations(String userHistory) {
+    public String chat(String userHistory) {
 
         // String prompt = """
         //     Eres un recomendador de productos de e-commerce.

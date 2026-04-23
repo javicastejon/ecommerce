@@ -23,19 +23,6 @@
     </properties>
 
     <dependencies>
-        <!-- JPA + Hibernate -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <!-- PostgreSQL Driver -->
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
         <!-- MongoDB -->
         <dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -61,11 +48,19 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- Ollama AI -->
         <dependency>
             <groupId>org.springframework.ai</groupId>
             <artifactId>spring-ai-starter-model-ollama</artifactId>
             <version>2.0.0-M4</version>
             <scope>compile</scope>
+        </dependency>
+
+                <!-- Gemini AI -->
+        <dependency>
+            <groupId>com.google.genai</groupId>
+            <artifactId>google-genai</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
         <!-- Testing -->

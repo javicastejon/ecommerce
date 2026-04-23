@@ -22,8 +22,13 @@ public class AIController {
     @Autowired
     private GetRecommendationsService useCase;
 
-    @PostMapping("/recom")
-    public String get(@RequestBody UserHistoryRequest query) {
-        return useCase.execute(query.getQuery());
+    @PostMapping("/queryOllama")
+    public String getOllama(@RequestBody UserHistoryRequest query) {
+        return useCase.queryOllama(query.getQuery());
+    }
+
+    @PostMapping("/queryGemini")
+    public String getGemini(@RequestBody UserHistoryRequest query) {
+        return useCase.queryGemini(query.getQuery());
     }
 }
