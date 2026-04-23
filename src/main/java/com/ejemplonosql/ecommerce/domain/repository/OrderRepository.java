@@ -3,9 +3,9 @@ package com.ejemplonosql.ecommerce.domain.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.ejemplonosql.ecommerce.domain.model.Product;
+import com.ejemplonosql.ecommerce.domain.model.Order;
 
 @Repository
-public interface ProductRepository extends MongoRepository<Product,String>{
+public interface OrderRepository extends MongoRepository<Order,String>{
     
 }

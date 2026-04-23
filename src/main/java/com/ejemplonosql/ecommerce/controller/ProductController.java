@@ -14,16 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ejemplonosql.ecommerce.domain.model.Product;
-import com.ejemplonosql.ecommerce.domain.model.User;
 import com.ejemplonosql.ecommerce.dto.ProductRequest;
 import com.ejemplonosql.ecommerce.dto.ProductResponse;
-import com.ejemplonosql.ecommerce.dto.UserRequest;
-import com.ejemplonosql.ecommerce.dto.UserResponse;
 import com.ejemplonosql.ecommerce.mapper.ProductMapper;
-import com.ejemplonosql.ecommerce.mapper.UserMapper;
-import com.ejemplonosql.ecommerce.service.EventLogService;
 import com.ejemplonosql.ecommerce.service.ProductService;
-import com.ejemplonosql.ecommerce.service.UserService;
 
 @RestController
 @RequestMapping("/api/v1/products")

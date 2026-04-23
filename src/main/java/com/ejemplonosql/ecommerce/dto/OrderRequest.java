@@ -1,24 +1,21 @@
-package com.ejemplonosql.ecommerce.domain.model;
+package com.ejemplonosql.ecommerce.dto;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
+import com.ejemplonosql.ecommerce.domain.model.OrderLine;
 
 import lombok.Getter;
 import lombok.Setter;
 
-
-@Document(collection = "orders")
 @Getter
 @Setter
-public class Order {
+public class OrderRequest {
    private String id;
    private LocalDateTime createdAt;
    private double total;
    private String userid;
    private List<OrderLine> orderLines = new ArrayList<>();
+    
 }
-
