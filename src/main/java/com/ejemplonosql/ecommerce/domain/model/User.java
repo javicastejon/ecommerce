@@ -9,7 +9,6 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Data
 @Document(collection = "users")
 @Getter
 @Setter

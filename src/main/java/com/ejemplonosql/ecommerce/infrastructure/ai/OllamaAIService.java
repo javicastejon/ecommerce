@@ -16,7 +16,11 @@ public class OllamaAIService {
         this.chatModel = chatModel;
     }
 
+<<<<<<< HEAD
     public String getRecommendations(List<Product> productList) {
+=======
+    public String chat(String userHistory) {
+>>>>>>> feature-gemini-ai
 
         String prompt = """
             Eres un recomendador de productos de e-commerce.

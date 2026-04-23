@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.ejemplonosql.ecommerce.domain.model.Product;
 import com.ejemplonosql.ecommerce.domain.repository.ProductRepository;
@@ -33,7 +32,6 @@ public class ProductService {
     }
 
     // Importante: se tiene que usar un modelo distinto ya que el objeto enviado está detached
-    @Transactional
     public void update(Product product) {
         productRepository
                 .findById(product.getId()) 
