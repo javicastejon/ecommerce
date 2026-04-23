@@ -23,10 +23,6 @@
     </properties>
 
     <dependencies>
-<<<<<<< HEAD
-
-=======
->>>>>>> feature-gemini-ai
         <!-- MongoDB -->
         <dependency>
 			<groupId>org.springframework.boot</groupId>
